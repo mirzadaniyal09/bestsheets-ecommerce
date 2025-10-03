@@ -38,8 +38,13 @@ app.use('/api/upload', require('./routes/uploadRoutes'));
 
 // Serve static files in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('uploads'));
+  // Serve the frontend static files
+  app.use(express.static(path.resolve(__dirname, '..', 'frontend', 'build')));
 
+  // Serve uploads
+  app.use('/uploads', express.static('uploads'));
+
+  // Handle React routing, return all requests to React app
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '..', 'frontend', 'build', 'index.html'));
   });
