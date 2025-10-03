@@ -38,15 +38,19 @@ app.use('/api/upload', require('./routes/uploadRoutes'));
 
 // Serve static files in production
 if (process.env.NODE_ENV === 'production') {
-  // Serve the frontend static files
-  app.use(express.static(path.resolve(__dirname, '..', 'frontend', 'build')));
-
-  // Serve uploads
+  // Serve uploads first
   app.use('/uploads', express.static('uploads'));
 
-  // Handle React routing, return all requests to React app
+  // Serve the frontend static files
+  app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+  // Handle React routing for non-API routes
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '..', 'frontend', 'build', 'index.html'));
+    // Don't intercept API routes
+    if (req.path.startsWith('/api/')) {
+      return res.status(404).json({ message: 'API route not found' });
+    }
+    res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
   });
 } else {
   app.get('/', (req, res) => {
