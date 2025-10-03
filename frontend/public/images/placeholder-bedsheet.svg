@@ -1,0 +1,8 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="500" fill="#f8f9fa"/>
+  <rect x="50" y="100" width="400" height="300" rx="15" fill="#e9ecef"/>
+  <rect x="70" y="120" width="360" height="260" rx="10" fill="#ffffff"/>
+  <path d="M150 200 L350 200 M150 230 L350 230 M150 260 L350 260 M150 290 L350 290" stroke="#dee2e6" stroke-width="2"/>
+  <circle cx="250" cy="320" r="20" fill="#6c757d"/>
+  <text x="250" y="450" text-anchor="middle" fill="#6c757d" font-family="Arial, sans-serif" font-size="16">BedSheet Image</text>
+</svg>

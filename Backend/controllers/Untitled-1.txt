@@ -1,0 +1,7 @@
+// Before: exact case matching
+const products = await Product.find({ category: req.params.category });
+
+// After: case-insensitive matching
+const products = await Product.find({ 
+  category: { $regex: new RegExp(`^${category}$`, 'i') }
+});

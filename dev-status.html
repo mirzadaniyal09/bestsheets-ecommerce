@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bedsheet Store - Development</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="root">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">
+                    <i class="fas fa-bed me-2"></i>
+                    BedSheet Store
+                </a>
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="#">Cart (0)</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container py-5">
+            <div class="text-center">
+                <h1 class="display-4 mb-4">🛏️ Bedsheet Store</h1>
+                <p class="lead">Development Environment Ready!</p>
+
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <i class="fas fa-server text-success me-2"></i>
+                                    Backend Status
+                                </h5>
+                                <p class="card-text">Backend API is running on port 5000</p>
+                                <a href="http://localhost:5000" class="btn btn-success" target="_blank">
+                                    Test API
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <i class="fas fa-react text-info me-2"></i>
+                                    Frontend Status
+                                </h5>
+                                <p class="card-text">React development server ready to start</p>
+                                <button class="btn btn-info" onclick="startReactApp()">
+                                    Start React App
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <h3>Next Steps:</h3>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5><i class="fas fa-database text-warning me-2"></i>Database</h5>
+                                    <p>MongoDB is connected and ready</p>
+                                    <small>Run seed data: <code>npm run seed</code></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5><i class="fas fa-code text-primary me-2"></i>Development</h5>
+                                    <p>Both frontend and backend are configured</p>
+                                    <small>Start coding your features!</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5><i class="fas fa-rocket text-success me-2"></i>Deployment</h5>
+                                    <p>Docker configuration ready</p>
+                                    <small>Use: <code>docker-compose up</code></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-dark text-light py-4 mt-5">
+            <div class="container text-center">
+                <p>&copy; 2025 Bedsheet Store. Development Environment.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function startReactApp() {
+            alert('To start the React app, run: npm start from the frontend directory');
+        }
+
+        // Test API connection
+        fetch('http://localhost:5000')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Backend API Response:', data);
+            })
+            .catch(error => {
+                console.error('Backend API Error:', error);
+            });
+    </script>
+</body>
+
+</html>
